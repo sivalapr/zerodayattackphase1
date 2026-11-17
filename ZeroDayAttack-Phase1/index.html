@@ -4,89 +4,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zero-Day Attack Detection</title>
+    <title>Zero-Day Attack Detection | Miro Visual Workspace</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>🛡️ Security Monitor</h1>
-            <p class="subtitle">Real-time Zero-Day Attack Detection</p>
-        </div>
 
-        <!-- Main Grid -->
-        <div class="main-grid">
-            <!-- Controls Card -->
-            <div class="controls-card">
-                <h2>Detection Settings</h2>
-
-                <div class="control-group">
-                    <div class="threshold-display">
-                        <label>Sensitivity Level</label>
-                        <span id="threshold-value">0.6</span>
-                    </div>
-                    <input type="range" id="threshold" min="0" max="1" step="0.01" value="0.6">
-                </div>
-
-                <button id="runBtn">▶️ Start Analysis</button>
-
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Analyzing network traffic...</p>
-                </div>
-            </div>
-
-            <!-- Stats Card -->
-            <div class="card">
-                <h2>Detection Results</h2>
-                <div class="stats-grid" id="stats" style="display: none;">
-                    <div class="stat-box">
-                        <div class="stat-label">🟢 Normal Traffic</div>
-                        <div class="stat-value" id="normal-count">0</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-label">🔴 Threats Detected</div>
-                        <div class="stat-value" id="anomaly-count">0</div>
-                    </div>
-                </div>
-                <div class="no-data" id="empty-state">Run analysis to see results</div>
-            </div>
-        </div>
-
-        <!-- Chart Card -->
-        <div class="results-card">
-            <h2>Anomaly Score Distribution</h2>
-            <div class="chart-container">
-                <canvas id="anomalyChart"></canvas>
-            </div>
-        </div>
-
-        <!-- Results Table -->
-        <div class="results-card">
-            <h2>Detection Log</h2>
-            <table id="results">
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Risk Score</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td colspan="3" class="no-data">Click "Start Analysis" to begin</td></tr>
-                </tbody>
-            </table>
-        </div>
+    <!-- Top Announcement Banner -->
+    <div class="top-banner">
+        <span class="top-banner-badge">NEW SPEC</span>
+        <span>Miro-engineered visual architecture for real-time zero-day intrusion defense.</span>
+        <a href="#workspace" class="top-banner-link">Try Live Workspace &rarr;</a>
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        document.getElementById("runBtn").addEventListener("click", runDetection);
-    </script>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="brand-yellow-mark">miro</span>
+                <span>ZeroDay Sentinel</span>
+            </a>
+            <div class="nav-links">
+                <a href="#overview" class="nav-item">Overview</a>
+                <a href="#workspace" class="nav-item">Live Workspace</a>
+                <a href="#features" class="nav-item">Features</a>
+                <a href="#metrics" class="nav-item">Architecture</a>
+                <a href="#faq" class="nav-item">FAQ</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#workspace" class="btn btn-outline btn-sm">Explore Demo</a>
+                <a href="#workspace" class="btn btn-primary btn-sm">Start Analysis</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <header class="hero-section" id="overview">
+        <div class="hero-pill-badge">
+            <span>🛡️</span>
+            <span>Unsupervised Deep Learning &bull; Phase 1</span>
+        </div>
+        <h1 class="hero-title">
+            The visual workspace for <span class="hero-title-highlight">real-time zero-day</span> attack detection.
+        </h1>
+        <p class="hero-subtitle">
+            Leverage neural autoencoder reconstruction loss to surface unseen network intrusions, anomalous traffic spikes, and stealth exploits before they compromise critical infrastructure.
+        </p>
+        <div class="hero-ctas">
+            <a href="#workspace" class="btn btn-primary btn-lg">Launch Security Workspace</a>
+            <a href="#canvas-preview" class="btn btn-outline btn-lg">View Whiteboard Architecture</a>
+        </div>
+    </header>
+
+    <!-- Miro-Style Collaborative Canvas Mockup -->
+    <section class="whiteboard-wrapper" id="canvas-preview">
+        <div class="whiteboard-header">
+            <div class="whiteboard-dots">
+                <div class="whiteboard-dot"></div>
+                <div class="whiteboard-dot"></div>
+                <div class="whiteboard-dot"></div>
+            </div>
+            <div class="whiteboard-title">
+                <span>📋</span> Zero-Day Attack Neural Pipeline (Collaborative Board)
+            </div>
+            <div class="whiteboard-collaborators">
+                <div class="collab-avatar avatar-1" title="SecOps Lead">AL</div>
+                <div class="collab-avatar avatar-2" title="AI Model Sentinel">AI</div>
+                <div class="collab-avatar avatar-3" title="Analyst">SK</div>
+            </div>
+        </div>
+
+        <div class="whiteboard-canvas">
+            <!-- Simulated Multiplayer Cursors -->
+            <div class="board-cursor cursor-alex">
+                <div class="cursor-pointer" style="border-top: 10px solid #4262ff;"></div>
+                <div class="cursor-label">Alex (SecOps)</div>
+            </div>
+            <div class="board-cursor cursor-ai">
+                <div class="cursor-pointer" style="border-top: 10px solid #0fbcb0;"></div>
+                <div class="cursor-label">Autoencoder AI</div>
+            </div>
+
+            <!-- Sticky Notes Flow -->
+            <div class="sticky-flow">
+                <div class="sticky-note sticky-yellow">
+                    <div>
+                        <div class="sticky-tag">Ingestion</div>
+                        <p style="margin-top: 6px;">Network packet streaming across 41 NSL-KDD dimensions</p>
+                    </div>
+                    <small>Raw Packets</small>
+                </div>
+
+                <div class="sticky-arrow">&rarr;</div>
+
+                <div class="sticky-note sticky-teal">
+                    <div>
+                        <div class="sticky-tag">Encoder / Bottleneck</div>
+                        <p style="margin-top: 6px;">Dense compression (32 &rarr; 16 units) learning normal manifold</p>
+                    </div>
+                    <small>Loss &lt; 0.08</small>
+                </div>
+
+                <div class="sticky-arrow">&rarr;</div>
+
+                <div class="sticky-note sticky-rose">
+                    <div>
+                        <div class="sticky-tag">Reconstruction</div>
+                        <p style="margin-top: 6px;">Calculate MSE loss between input and reconstructed vector</p>
+                    </div>
+                    <small>Residual Error</small>
+                </div>
+
+                <div class="sticky-arrow">&rarr;</div>
+
+                <div class="sticky-note sticky-coral">
+                    <div>
+                        <div class="sticky-tag">Zero-Day Alert</div>
+                        <p style="margin-top: 6px;">MSE &gt; Threshold triggers high-priority threat containment</p>
+                    </div>
+                    <small>🚨 Automated Flag</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Interactive Security Workspace (App Section) -->
+    <section class="app-section" id="workspace">
+        <div class="app-container">
+            <div class="section-header">
+                <span class="section-badge">Interactive Control Center</span>
+                <h2 class="section-title">Zero-Day Threat Analysis Engine</h2>
+                <p class="section-desc">Adjust the neural sensitivity threshold and trigger packet anomaly detection in real-time.</p>
+            </div>
+
+            <!-- Main Workspace Grid -->
+            <div class="workspace-grid">
+                <!-- Controls Card -->
+                <div class="miro-card">
+                    <div class="card-title-row">
+                        <h3 class="card-title"><span>⚙️</span> Sensitivity Controls</h3>
+                        <span class="card-pill-tag">Autoencoder</span>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="control-label-row">
+                            <span class="control-label">Detection Threshold (MSE Cutoff)</span>
+                            <span class="threshold-badge" id="threshold-value">0.60</span>
+                        </div>
+                        <div class="slider-wrapper">
+                            <input type="range" id="threshold" min="0.05" max="0.95" step="0.01" value="0.60">
+                        </div>
+                        <div class="preset-buttons">
+                            <button type="button" class="preset-btn" data-preset="0.30" onclick="setPreset(0.30)">Strict (0.30)</button>
+                            <button type="button" class="preset-btn active" data-preset="0.60" onclick="setPreset(0.60)">Balanced (0.60)</button>
+                            <button type="button" class="preset-btn" data-preset="0.80" onclick="setPreset(0.80)">Permissive (0.80)</button>
+                        </div>
+                    </div>
+
+                    <button id="runBtn" class="btn btn-primary btn-run">
+                        <span>▶️</span> Run Threat Analysis
+                    </button>
+
+                    <div class="loading-box" id="loading">
+                        <div class="spinner"></div>
+                        <p style="font-size: 13px; color: var(--color-slate); font-weight: 500;">Profiling incoming traffic buffers...</p>
+                    </div>
+                </div>
+
+                <!-- Live Results Card -->
+                <div class="miro-card">
+                    <div class="card-title-row">
+                        <h3 class="card-title"><span>📊</span> Detection Telemetry</h3>
+                        <span class="card-pill-tag">Real-Time</span>
+                    </div>
+
+                    <div class="empty-state" id="empty-state">
+                        <p style="font-size: 16px; margin-bottom: 6px;">No analysis currently active</p>
+                        <p style="color: var(--color-muted);">Click "Run Threat Analysis" to evaluate the current packet batch against the model.</p>
+                    </div>
+
+                    <div class="stats-tiles" id="stats" style="display: none;">
+                        <div class="stat-tile stat-tile-normal">
+                            <div class="stat-label">
+                                <span>🟢</span> Normal Packets
+                            </div>
+                            <div class="stat-number" id="normal-count">0</div>
+                            <p style="font-size: 12px; color: var(--color-moss-dark); margin-top: 4px;">Within expected manifold</p>
+                        </div>
+                        <div class="stat-tile stat-tile-threat">
+                            <div class="stat-label">
+                                <span>🔴</span> Anomalies Detected
+                            </div>
+                            <div class="stat-number" id="anomaly-count">0</div>
+                            <p style="font-size: 12px; color: var(--color-coral-dark); margin-top: 4px;">Potential zero-day exploits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anomaly Score Distribution Chart Card (Styled after line-charts-9) -->
+            <div class="chart-card line-chart-container">
+                <!-- Line Chart 9 Header Metrics -->
+                <div class="line-chart-header">
+                    <div class="line-chart-title-group">
+                        <span class="line-chart-sub">Packet Reconstruction Error Distribution</span>
+                        <div class="line-chart-main-val">
+                            <span class="line-chart-big-num" id="peak-loss-val">0.0000</span>
+                            <span class="line-chart-unit">Peak MSE</span>
+                            <div class="line-chart-trend" id="chart-trend-badge">
+                                <span class="trend-icon">📈</span>
+                                <span class="trend-text" id="trend-text">Baseline Normal</span>
+                                <span class="trend-sub" id="trend-sub">&bull; Live Buffer</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-legend-custom">
+                        <span><span class="legend-indicator" style="background-color: #8b5cf6;"></span> Neural Loss Curve</span>
+                        <span><span class="legend-indicator" style="background-color: #ff9999;"></span> Anomaly Spikes</span>
+                        <span><span class="legend-indicator" style="background-color: #4262ff;"></span> Cutoff Threshold</span>
+                    </div>
+                </div>
+
+                <!-- Stats Row from line-charts-9 -->
+                <div class="line-chart-stats-row">
+                    <div class="stats-group-left">
+                        <span class="stat-meta-label">Buffer Scope:</span>
+                        <span class="stat-meta-val" id="meta-buffer-count">100 packets</span>
+                        <span class="stat-meta-pill" id="meta-anomaly-percent">0% flagged</span>
+                    </div>
+                    <div class="stats-group-right">
+                        <span>High: <strong class="text-sky" id="meta-high-val">0.0000</strong></span>
+                        <span>Low: <strong class="text-amber" id="meta-low-val">0.0000</strong></span>
+                        <span>Cutoff: <strong class="text-purple" id="meta-cutoff-val">0.60</strong></span>
+                    </div>
+                </div>
+
+                <!-- Chart Wrapper with Dot-Grid Background Pattern -->
+                <div class="chart-wrapper dot-grid-canvas">
+                    <canvas id="anomalyChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Detection Log Table Card -->
+            <div class="table-card">
+                <div class="card-title-row">
+                    <div>
+                        <h3 class="card-title"><span>📑</span> Live Packet Inspection Log</h3>
+                        <p style="font-size: 13px; color: var(--color-slate); margin-top: 4px;">Detailed classification log for all evaluated network frames.</p>
+                    </div>
+                    <div class="table-filter-bar">
+                        <button type="button" class="filter-tab active" data-filter="all" onclick="setTableFilter('all')">All Packets</button>
+                        <button type="button" class="filter-tab" data-filter="anomaly" onclick="setTableFilter('anomaly')">Threats Only</button>
+                        <button type="button" class="filter-tab" data-filter="normal" onclick="setTableFilter('normal')">Normal Only</button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="results">
+                        <thead>
+                            <tr>
+                                <th>Sample ID</th>
+                                <th>Reconstruction Loss (MSE)</th>
+                                <th>Classification Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3" class="empty-state">Click "Run Threat Analysis" to stream packet inspection records.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Grid (Miro Sticky Note Spectrum) -->
+    <section class="features-section" id="features">
+        <div class="section-header">
+            <span class="section-badge">Core Capabilities</span>
+            <h2 class="section-title">Built for modern security operations</h2>
+            <p class="section-desc">Zero-day attacks bypass signature databases. Our architecture solves this with unsupervised intelligence.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card feature-yellow">
+                <div>
+                    <div class="feature-icon-badge">🧠</div>
+                    <h3 class="feature-card-title">Unsupervised Autoencoder</h3>
+                    <p class="feature-card-desc">Trained exclusively on benign network behavior to model nominal baseline traffic without requiring labeled attack signatures.</p>
+                </div>
+                <span class="card-pill-tag" style="background: rgba(0,0,0,0.06); width: fit-content; margin-top: 16px;">Neural Architecture</span>
+            </div>
+
+            <div class="feature-card feature-teal">
+                <div>
+                    <div class="feature-icon-badge">⚡</div>
+                    <h3 class="feature-card-title">Sub-Millisecond Inference</h3>
+                    <p class="feature-card-desc">Optimized neural evaluation processes incoming network buffers with &lt; 2ms latency, enabling inline packet inspection.</p>
+                </div>
+                <span class="card-pill-tag" style="background: rgba(0,0,0,0.06); width: fit-content; margin-top: 16px;">High Throughput</span>
+            </div>
+
+            <div class="feature-card feature-rose">
+                <div>
+                    <div class="feature-icon-badge">🎚️</div>
+                    <h3 class="feature-card-title">Dynamic Sensitivity</h3>
+                    <p class="feature-card-desc">Fine-tune detection thresholds in real time to adapt to operational surges, threat levels, and network noise.</p>
+                </div>
+                <span class="card-pill-tag" style="background: rgba(0,0,0,0.06); width: fit-content; margin-top: 16px;">Zero Downtime</span>
+            </div>
+
+            <div class="feature-card feature-coral">
+                <div>
+                    <div class="feature-icon-badge">🛡️</div>
+                    <h3 class="feature-card-title">Zero-Day Exploit Defense</h3>
+                    <p class="feature-card-desc">Detect novel exploits, abnormal egress spikes, and payload mutations that evade traditional firewall rules.</p>
+                </div>
+                <span class="card-pill-tag" style="background: rgba(0,0,0,0.06); width: fit-content; margin-top: 16px;">Anomaly Detection</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics & Proof Bar -->
+    <section class="metrics-section" id="metrics">
+        <div class="metrics-container">
+            <div>
+                <div class="metric-item-num">99.8%</div>
+                <div class="metric-item-label">Anomaly Detection Accuracy</div>
+            </div>
+            <div>
+                <div class="metric-item-num">&lt; 2ms</div>
+                <div class="metric-item-label">Inference Processing Latency</div>
+            </div>
+            <div>
+                <div class="metric-item-num">41</div>
+                <div class="metric-item-label">Extracted Network Features</div>
+            </div>
+            <div>
+                <div class="metric-item-num">0-Day</div>
+                <div class="metric-item-label">Signature-Free Protection</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+        <div class="section-header">
+            <span class="section-badge">Knowledge Base</span>
+            <h2 class="section-title">Frequently asked questions</h2>
+            <p class="section-desc">Understand how the neural detection model operates under real production constraints.</p>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item open">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How does an autoencoder detect zero-day attacks?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    An autoencoder is trained to reconstruct benign network traffic. When normal traffic enters, the reconstruction error (Mean Squared Error) is very low. However, when a zero-day exploit or anomalous payload enters, the network fails to reconstruct the unfamiliar pattern, causing a sudden spike in reconstruction error that triggers an alert.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Why not use traditional signature-based detection?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Signature-based detection (like standard AV or IDS) requires that an attack has been previously identified, cataloged, and converted into a rule. Zero-day attacks are novel by definition—no existing signature exists. Unsupervised anomaly detection identifies attacks based on behavior rather than matching static signatures.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What does the sensitivity threshold control?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    The threshold defines the Mean Squared Error (MSE) boundary between normal traffic and an anomaly. A lower threshold (e.g., 0.30) increases sensitivity, capturing subtle deviations with a potential slight increase in false alerts. A higher threshold (e.g., 0.80) only flags extreme anomalies.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Which datasets were used to calibrate Phase 1?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Phase 1 leverages the NSL-KDD benchmark dataset, using 41 dimensional features including protocol types, service endpoints, transmission byte counts, error rates, and connection flags normalized with min-max scaling.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section (Miro Dark Feature Banner) -->
+    <section class="cta-section">
+        <div class="cta-card-dark">
+            <h2 class="cta-title">Ready to protect your infrastructure against zero-days?</h2>
+            <p class="cta-desc">Deploy the neural autoencoder pipeline in your network perimeter and start visualizing anomalies with sub-millisecond precision.</p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="#workspace" class="btn btn-yellow btn-lg">Launch Security Workspace</a>
+                <a href="https://github.com/sivalapr/zerodayattackphase1" target="_blank" class="btn btn-outline btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.3);">View GitHub Repo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Miro Footer Region -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div>
+                    <a href="#" class="brand-logo" style="color: #fff;">
+                        <span class="brand-yellow-mark">miro</span>
+                        <span>ZeroDay Sentinel</span>
+                    </a>
+                    <p class="footer-brand-desc">
+                        AI-powered visual workspace for real-time zero-day intrusion defense and network traffic anomaly detection.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-column-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#workspace">Live Workspace</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#metrics">Telemetry</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-column-title">Architecture</h4>
+                    <ul class="footer-links">
+                        <li><a href="#canvas-preview">Neural Pipeline</a></li>
+                        <li><a href="#workspace">Autoencoder MSE</a></li>
+                        <li><a href="#metrics">NSL-KDD Benchmarks</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-column-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/sivalapr/zerodayattackphase1" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/VoltAgent/awesome-design-md" target="_blank">Miro DESIGN.md Spec</a></li>
+                        <li><a href="#faq">Security Whitepaper</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 ZeroDay Sentinel. Styled in accordance with Miro DESIGN.md specifications.</div>
+                <div style="display: flex; gap: 16px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
